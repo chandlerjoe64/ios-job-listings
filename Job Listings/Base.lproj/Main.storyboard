@@ -44,7 +44,8 @@
                     <navigationItem key="navigationItem" id="AIT-Gr-CMG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="d6S-sS-ErQ">
                             <connections>
-                                <segue destination="Kai-jL-lx1" kind="show" id="rXn-xP-ajX"/>
+                                <action selector="AddJob:" destination="BYZ-38-t0r" id="JQn-na-syq"/>
+                                <segue destination="Kai-jL-lx1" kind="showDetail" id="XjC-IO-pdK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -54,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="-564"/>
+            <point key="canvasLocation" x="938" y="-564"/>
         </scene>
         <!--Title-->
         <scene sceneID="fKa-54-FuN">
@@ -65,46 +66,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Job title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4YE-yJ-4kk">
-                                <rect key="frame" x="68" y="89.5" width="297" height="30"/>
+                                <rect key="frame" x="68" y="45.5" width="297" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lj-oR-eHK">
-                                <rect key="frame" x="15" y="94" width="38" height="21"/>
+                                <rect key="frame" x="15" y="50" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cE1-hI-5eU">
-                                <rect key="frame" x="15" y="129.5" width="33" height="21"/>
+                                <rect key="frame" x="15" y="85.5" width="33" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hourly pay..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y4Z-TZ-mw5">
-                                <rect key="frame" x="68" y="125" width="297" height="30"/>
+                                <rect key="frame" x="68" y="81" width="297" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degree Required:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcR-8Y-ILQ">
-                                <rect key="frame" x="15" y="165" width="133.5" height="21"/>
+                                <rect key="frame" x="15" y="121" width="133.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6Q-7y-xFY">
-                                <rect key="frame" x="316" y="160" width="51" height="31"/>
+                                <rect key="frame" x="316" y="116" width="51" height="31"/>
                             </switch>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Job description..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XH8-ln-SyQ">
-                                <rect key="frame" x="15" y="237" width="350" height="420"/>
+                                <rect key="frame" x="15" y="193" width="350" height="464"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjz-4W-krA">
-                                <rect key="frame" x="15" y="201" width="126" height="21"/>
+                                <rect key="frame" x="15" y="157" width="126" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -135,24 +136,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c0g-Cf-weT"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="56B-eN-hKx" userLabel="Job">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="KAL-6B-8M7">
-                            <connections>
-                                <action selector="SaveButton:" destination="Kai-jL-lx1" id="uRS-tS-kIK"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="56B-eN-hKx" userLabel="Job"/>
                     <connections>
                         <outlet property="DegreeRequired" destination="a6Q-7y-xFY" id="XjZ-yT-Sol"/>
                         <outlet property="HourlyPay" destination="y4Z-TZ-mw5" id="BS6-Aw-8yE"/>
                         <outlet property="JobDescription" destination="XH8-ln-SyQ" id="Yyu-Ck-bNp"/>
                         <outlet property="JobTitle" destination="4YE-yJ-4kk" id="h4c-Jg-cfw"/>
-                        <outlet property="SaveButton" destination="KAL-6B-8M7" id="zYj-a9-JaX"/>
+                        <outlet property="WindowTitle" destination="56B-eN-hKx" id="Tf2-6M-DAD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bU-by-Co1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1838" y="-564"/>
+            <point key="canvasLocation" x="1740" y="-564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n7o-zc-LO3">
@@ -165,7 +160,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Mwm-cx-CTa"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="l5E-YF-AKj"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJE-jS-VKo" userLabel="First Responder" sceneMemberID="firstResponder"/>

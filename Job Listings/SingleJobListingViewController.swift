@@ -11,6 +11,7 @@ import UIKit
 class SingleJobListingViewController: UIViewController {
 
     
+    @IBOutlet weak var WindowTitle: UINavigationItem!
     @IBOutlet weak var JobTitle: UITextField!
     @IBOutlet weak var HourlyPay: UITextField!
     @IBOutlet weak var DegreeRequired: UISwitch!
@@ -22,17 +23,33 @@ class SingleJobListingViewController: UIViewController {
         
     }
     
-    @IBAction func SaveButton(_ sender: Any) {
-        let jobTitle = JobTitle.text
-        let jobDesription = JobDescription.text
-        let hourlyPayText = HourlyPay.text ?? ""
-        let hourlyPay = Double(hourlyPayText) ?? 0.0
-        let degreeRequired = DegreeRequired.isOn
-        
-        let job = Job(title: jobTitle, pay: hourlyPay, degreeRequired: degreeRequired, jobDescription: jobDesription)
-        
-        
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
+    
+//    @IBAction func SaveButton(_ sender: Any) {
+//        let jobTitle = JobTitle.text
+//        let jobDesription = JobDescription.text
+//        let hourlyPayText = HourlyPay.text ?? ""
+//        let hourlyPay = Double(hourlyPayText) ?? 0.0
+//        let degreeRequired = DegreeRequired.isOn
+//
+//        if let job = Job(title: jobTitle, pay: hourlyPay, degreeRequired: degreeRequired, jobDescription: jobDesription) {
+//            do {
+//                let managedContext = job.managedObjectContext
+//
+//                try managedContext?.save()
+//
+//                self.navigationController?.popViewController(animated: true)
+//            } catch {
+//                print("Context could not be saved")
+//            }
+//        }
+//
+//
+//    }
     
 
     /*
@@ -45,4 +62,11 @@ class SingleJobListingViewController: UIViewController {
     }
     */
 
+}
+
+extension SingleJobListingViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

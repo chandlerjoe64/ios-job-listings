@@ -29,28 +29,7 @@ class SingleJobListingViewController: UIViewController {
     }
     
     
-//    @IBAction func SaveButton(_ sender: Any) {
-//        let jobTitle = JobTitle.text
-//        let jobDesription = JobDescription.text
-//        let hourlyPayText = HourlyPay.text ?? ""
-//        let hourlyPay = Double(hourlyPayText) ?? 0.0
-//        let degreeRequired = DegreeRequired.isOn
-//
-//        if let job = Job(title: jobTitle, pay: hourlyPay, degreeRequired: degreeRequired, jobDescription: jobDesription) {
-//            do {
-//                let managedContext = job.managedObjectContext
-//
-//                try managedContext?.save()
-//
-//                self.navigationController?.popViewController(animated: true)
-//            } catch {
-//                print("Context could not be saved")
-//            }
-//        }
-//
-//
-//    }
-    
+
 
     /*
     // MARK: - Navigation
@@ -62,6 +41,25 @@ class SingleJobListingViewController: UIViewController {
     }
     */
 
+    @IBAction func SaveJob(_ sender: Any) {
+        let jobTitle = JobTitle.text
+        let jobDesription = JobDescription.text
+        let hourlyPayText = HourlyPay.text ?? ""
+        let hourlyPay = Double(hourlyPayText) ?? 0.0
+        let degreeRequired = DegreeRequired.isOn
+        
+        if let job = Job(title: jobTitle, pay: hourlyPay, degreeRequired: degreeRequired, jobDescription: jobDesription) {
+            do {
+                let managedContext = job.managedObjectContext
+                
+                try managedContext?.save()
+                
+                self.navigationController?.popViewController(animated: true)
+            } catch {
+                print("Context could not be saved")
+            }
+        }
+    }
 }
 
 extension SingleJobListingViewController: UITextFieldDelegate {

@@ -29,15 +29,13 @@ class JobListingsViewController: UIViewController {
         
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<Job> = Job.fetchRequest()
-        
         do {
             jobs = try managedContext.fetch(fetchRequest)
             JobListingsTableView.reloadData()
-        } catch {
-            print("Fetch could not be performed")
+        }catch {
+                print("Fetch could not be performed")
+            }
         }
-        
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -67,10 +65,11 @@ extension JobListingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = JobListingsTableView.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath)
+        let cell = JobListingsTableView.dequeueReusableCell(withIdentifier: "jobCell", for: indexPath)
         let job = jobs[indexPath.row]
         
         cell.textLabel?.text = job.title
+        cell.detailTextLabel?.text = String(job.pay)
         
         return cell
     }
